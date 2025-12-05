@@ -1,16 +1,4 @@
 const express = require('express');
-const { chromium } = require('playwright');
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-
-app.use(express.json());
-
-
-// Health check
-app.get('/health', (req, res) => res.send('ok'));
-
-
 // Navigate and return HTML
 app.get('/browse', async (req, res) => {
 const url = req.query.url;
